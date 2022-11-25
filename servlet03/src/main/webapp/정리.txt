@@ -1,0 +1,38 @@
+	
+	1. 스크립트릿(Scriptlet) : <% %>
+	jsp 에서 service메소드 내에 들어가는 명령문 부분
+	
+	
+	2. 표현식(expression) : <%= %>
+	출력: 변수값, 리턴하는 메소드의 리턴값
+	
+	
+	3. 선언(declaration tag) : <%! %>
+	필드(멤버변수), 메소드 선언하는 부분
+	jsp클래스 내에 들어가는 부분 
+	
+	
+
+	4. 지시어 : <%@ %>
+	   - page 지시어
+	   	 현재 jsp 페이지에 적용할 속성을 지정
+	   	 import 속성으로 자바에서의 클래스import선언문을 지정
+	   	 <%@ page language='' import=''  ...%>
+	   - include 지시어
+	   	 매 페이지마다 공통적인 부분을 별도 페이지로 만들고
+	   	 별도 페이지를 매 페이지에 포함시킨다 - 유지보수가 용이
+	   	 정적페이지로 include 지시어가 선언된 페이지만 java파일이 생성되고 컴파일된다.
+	   	 <%@ include file='' %>
+	   - taglib 지시어
+	   	 추가적인 library를 설치해야 한다.
+	   	 : JSTL(Jsp Standard Tag Library)
+	   	 <%@ taglib uri='' prefix='' %>
+   	 
+	5. 주석 : crtl+shift+/, crtl+shift+c
+		<!-- --> : html 태그에 대한 주석  
+		<%-- --> : jsp 태그에 대한 주석  	 	
+	    /**/, // : java코드에 해당하는 스크립트릿, 선언에 있는 코드 주석
+    
+    
+
+	jsp 내장객체

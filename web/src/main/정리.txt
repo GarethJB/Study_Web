@@ -1,0 +1,25 @@
+
+
+
+
+CREATE TABLE customer(
+    id      NUMBER CONSTRAINT customer_id_pk PRIMARY KEY,
+    name    VARCHAR2(50) not null,
+    gender  VARCHAR2(3) DEFAULT '남' not null,
+    email   VARCHAR2(50),
+    phone   VARCHAR2(13)
+);
+
+CREATE SEQUENCE seq_customer
+start with 1 INCREMENT by 1 NOCACHE;
+
+INSERT INTO customer(id, name, email)
+VALUES(seq_customer.nextval, '홍길동', 'hong@naver.com');
+
+시퀀스가 customer 테이블에 자동적용되게 할 트리거
+create trigger trg_customer
+	before insert on customer
+	for each now
+begin
+	select seq_customer.netval into id from dual;
+end;
